@@ -15,7 +15,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage -u",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage -u --watchAll",
     "test:update-snapshot": "react-scripts test -u",
     "eject": "react-scripts eject"
   },

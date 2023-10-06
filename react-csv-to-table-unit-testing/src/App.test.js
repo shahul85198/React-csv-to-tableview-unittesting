@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from './App';
 
 //test('renders learn react link', () => {
@@ -13,7 +13,7 @@ describe("App Component", () => {
     expect(appComponent).toMatchSnapshot() // to generate snapshot
   })
 
-  test('Process CSV to Table', () => {
+  test('Process CSV to Table', async () => {
 
     const FILE_CONTENT = `Name,Job
     Shaik, uI Engineer
@@ -48,5 +48,44 @@ describe("App Component", () => {
         files: [file]
       }
     })
+   await waitFor(() => expect(screen.getByText("UI Engineer")).toBeInTheDocument())
+    expect(appComponent).toMatchSnapshot();
   })
 })
+
+
+
+
+
+
+
+
+/* 
+
+function getData() {
+  fetch('https://jsonplaceholder.typicode.com/users/1')
+  .then(data => data.json())
+  .then(userDetails => success(userDetails))
+  .catch(errorDetails => error(errorDetails))
+}
+
+getData((user) => {
+  console.log("user, user")
+}, (error) => {
+  console.log("error", error.message)
+})
+
+
+
+async function getData() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users/1')
+  const userDetails = await response.json();
+  return userDetails
+}
+
+const userDetails = getData()
+console.log(userDetails)
+
+
+
+*/
