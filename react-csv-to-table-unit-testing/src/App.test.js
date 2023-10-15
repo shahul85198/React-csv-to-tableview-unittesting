@@ -12,6 +12,9 @@ describe("App Component", () => {
     const appComponent = render(<App />) // (<App />) e component html kinda render ity andulo unna elements ento check chaiyadaniki define chesey snapshot idi
     expect(appComponent).toMatchSnapshot() // to generate snapshot
   })
+ 
+  
+
 
   test('Process CSV to Table', async () => {
 

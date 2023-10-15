@@ -19,9 +19,10 @@ const onFileChange = useCallback((event) => {
     .then((fileData) => {
      setCsvData(fileData)
   })
-    .catch((fileError) => console.log(":: ERROR READING FILE ::", fileError)
-  );
+   // .catch((fileError) =>
+    //console.log(":: ERROR READING FILE ::", fileError)
   }
+  
 
 /*  getFileContentByCallback(file,
   (fileData) => console.log(":: Callback based result ::", fileData), (fileError) => console.log(":: ERROR READING FILE ::", fileError)
